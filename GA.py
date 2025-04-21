@@ -6,7 +6,7 @@ gen_max = 100
 batas_bawah = -10
 batas_atas = 10
 peluang_c = 0.8
-peluang_m = 0.3
+peluang_m = 0.1
 dimensi = 2
 def inisialisasi_pop():
     populasi = [None] * pop_size
@@ -112,7 +112,7 @@ def mutasi(individu):
             individu[i] = nilaiMutasi
         i +=1
     return individu
-def GA():
+def generasi_GA():
     print("Algoritma dimulai....")
     populasi = inisialisasi_pop()
     solusi_terbaik = None
@@ -163,7 +163,7 @@ def GA():
         print("Generasi", i+1, "| Fitness Terbaik: ", fitness_terbaik,"| Solusi: ", solusi_terbaik)
 
     return solusi_terbaik,fitness_terbaik,riwayat_fitness
-hasil, fitness, riwayat = GA()
+hasil, fitness, riwayat = generasi_GA()
 
 kromosom_terbaik = encode(hasil)
 print("\nKromosom Terbaik:", ''.join(kromosom_terbaik))
