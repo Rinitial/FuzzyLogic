@@ -115,10 +115,7 @@ def generasi_GA():
     kromosom_biner = None
 
     for i in range(gen_max):
-        print("generasi", i+1, "dimulai...")
-
         nilai_fitness = evaluasi_populasi(populasi)#Proses evaluasi fitness
-
         #Proses pencarian individu dengan nilai fitness terbaik (proses elitisme)
         fitness_trkcl = nilai_fitness[0]
         index = 0
@@ -130,7 +127,6 @@ def generasi_GA():
         for k in range(dimensi):
             elite[k] = populasi[index][k]
         elite_fitness = nilai_fitness[index]
-
         #Proses pembaharuan apabila ditemukannya individu yang lebih baik
         if elite_fitness < fitness_terbaik:
             fitness_terbaik = elite_fitness
@@ -139,10 +135,8 @@ def generasi_GA():
                 solusi_terbaik[k] = elite[k]
             kromosom_biner = decode(solusi_terbaik)
         riwayat_fitness.append(fitness_terbaik)#Menyimpan fitness terbaik ke dalam list
-
         #Pemilihan orang tua dan crossover
         parent = tournamentSelection(populasi,nilai_fitness)
-    
         #Pembuatan populasi baru
         generasi = [None] * pop_size
         idx = 0
@@ -155,13 +149,8 @@ def generasi_GA():
             generasi[idx] = c1
             generasi[idx + 1] = c2
             idx += 2
-
         generasi[pop_size-1] = elite#Mempertahankan individu terbaik
-
         populasi = generasi#Pembaharuan populasi
-
-        print("Generasi", i+1, "| Fitness Terbaik: ", fitness_terbaik,"| Solusi: ", solusi_terbaik)
-
     return solusi_terbaik,fitness_terbaik,riwayat_fitness,kromosom_biner
 #Run GA
 hasil, fitness, riwayat, kromosom_biner= generasi_GA()
