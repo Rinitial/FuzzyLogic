@@ -1,8 +1,8 @@
 import random
 import math
 
-pop_size = 50
-gen_max = 100
+pop_size = 20
+gen_max = 10
 batas_bawah = -10
 batas_atas = 10
 peluang_c = 0.8
