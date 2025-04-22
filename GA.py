@@ -156,9 +156,9 @@ def generasi_GA():
             idx += 2
         generasi[pop_size-1] = elite#Mempertahankan individu terbaik
         populasi = generasi#Pembaharuan populasi
-    return solusi_terbaik,fitness_terbaik,riwayat_fitness,kromosom_biner
+    return solusi_terbaik,fitness_terbaik,kromosom_biner
 #Run GA
-hasil, fitness, riwayat, kromosom_biner= generasi_GA()
+hasil, fitness,kromosom_biner= generasi_GA()
 
 #Tampilan untuk hasil akhir
 print("\nKromosom Terbaik:", ''.join(kromosom_biner))
