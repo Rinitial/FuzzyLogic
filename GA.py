@@ -135,6 +135,11 @@ def generasi_GA():
                 solusi_terbaik[k] = elite[k]
             kromosom_biner = decode(solusi_terbaik)
         riwayat_fitness.append(fitness_terbaik)#Menyimpan fitness terbaik ke dalam list
+        print(f"Individu pada Generasi {i + 1}:")
+        for j in range(len(populasi)):
+            print(f"Individu {j + 1}: {populasi[j]}, Fitness: {nilai_fitness[j]}")
+        print(f"Fitness Terbaik = {fitness_terbaik}, Fungsi = {fungsi_objectif(solusi_terbaik)}")
+        print("")
         #Pemilihan orang tua dan crossover
         parent = tournamentSelection(populasi,nilai_fitness)
         #Pembuatan populasi baru
